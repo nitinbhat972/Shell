@@ -1,0 +1,389 @@
+ASCI color codes for terminal:
+
+    # Reset
+    RESET='\e[0m'  # Reset all attributes
+
+    # Text color
+    BLACK='\e[0;30m'   # Black
+    RED='\e[0;31m'     # Red
+    GREEN='\e[0;32m'   # Green
+    YELLOW='\e[0;33m'  # Yellow
+    BLUE='\e[0;34m'    # Blue
+    MAGENTA='\e[0;35m' # Magenta
+    CYAN='\e[0;36m'    # Cyan
+    WHITE='\e[0;37m'   # White
+
+    # Bold text
+    BOLD_BLACK='\e[1;30m'   # Bold Black
+    BOLD_RED='\e[1;31m'     # Bold Red
+    BOLD_GREEN='\e[1;32m'   # Bold Green
+    BOLD_YELLOW='\e[1;33m'  # Bold Yellow
+    BOLD_BLUE='\e[1;34m'    # Bold Blue
+    BOLD_MAGENTA='\e[1;35m' # Bold Magenta
+    BOLD_CYAN='\e[1;36m'    # Bold Cyan
+    BOLD_WHITE='\e[1;37m'   # Bold White
+
+    # Underline text
+    UNDERLINE_BLACK='\e[4;30m'   # Underline Black
+    UNDERLINE_RED='\e[4;31m'     # Underline Red
+    UNDERLINE_GREEN='\e[4;32m'   # Underline Green
+    UNDERLINE_YELLOW='\e[4;33m'  # Underline Yellow
+    UNDERLINE_BLUE='\e[4;34m'    # Underline Blue
+    UNDERLINE_MAGENTA='\e[4;35m' # Underline Magenta
+    UNDERLINE_CYAN='\e[4;36m'    # Underline Cyan
+    UNDERLINE_WHITE='\e[4;37m'   # Underline White
+
+    # Background color
+    BG_BLACK='\e[40m'   # Black background
+    BG_RED='\e[41m'     # Red background
+    BG_GREEN='\e[42m'   # Green background
+    BG_YELLOW='\e[43m'  # Yellow background
+    BG_BLUE='\e[44m'    # Blue background
+    BG_MAGENTA='\e[45m' # Magenta background
+    BG_CYAN='\e[46m'    # Cyan background
+    BG_WHITE='\e[47m'   # White background
+
+---------------------------------------------------------------------------------------------------------------------------
+
+mapfile ( or readarray ):
+    -d delim: Specifies the delimiter to use for splitting input lines into array elements (default is newline).
+    -n count: Specifies the maximum number of lines to read.
+    -O origin: Specifies the index in the array at which to begin storing elements.
+    -s count: Specifies the number of lines to skip before starting to store elements.
+    -t: Removes trailing newline characters from each line.
+    -u fd: Reads input from file descriptor fd instead of standard input.
+    -C callback: Specifies a callback function to execute after reading each line.
+    -c quantum: Specifies the number of lines to read at a time (default is 5000).
+    -i varname: Reads lines into a single variable varname instead of an array.
+    -r: Disables interpretation of backslashes.
+    -x: Exits immediately if any mapfile operation fails.
+    -A name: Reads lines into an associative array name.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+find:
+
+    -name pattern: Searches for files and directories with the specified filename pattern.
+    -type type: Specifies the type of file to search for (e.g., f for regular files, d for directories).
+    -size [+/-]size: Searches for files with a size greater than (+) or less than (-) the specified size.
+    -mtime [+/-]n: Searches for files modified less than (-) or more than (+) n days ago.
+    -empty: Searches for empty files or directories.
+    -perm mode: Searches for files with the specified permissions.
+    -exec command {} \;: Executes the specified command on each file found.
+    -maxdepth levels: Limits the search depth to the specified number of levels.
+    -not expression: Negates the following expression.
+    -and, -or: Logical operators for combining multiple expressions.
+    -regex pattern: Searches for files matching the specified regex pattern.
+    -newer file: Searches for files modified more recently than the specified reference file.
+    -printf format: Prints the found files using the specified format.
+    -delete: Deletes the found files and directories.
+    -print: Prints the path of the found files and directories (default action).
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Bash Shell Command Options Reference:
+
+    -e filename: Checks if the specified file exists.
+    -f filename: Checks if the specified file exists and is a regular file.
+    -d directory: Checks if the specified directory exists.
+    -r filename: Checks if the specified file is readable.
+    -w filename: Checks if the specified file is writable.
+    -x filename: Checks if the specified file is executable.
+    -z string: Checks if the specified string is empty.
+    -n string: Checks if the specified string is not empty.
+    -eq, -ne, -lt, -le, -gt, -ge: Comparison operators for numeric values (equal, not equal, less than, less than or equal to, greater than, greater than or equal to).
+    -eq, -ne, <, <=, >, >=: Comparison operators for string values (equal, not equal, less than, less than or equal to, greater than, greater than or equal to).
+    -a, -o, !: Logical operators for combining multiple conditions (AND, OR, NOT).
+    -z, -n: String length checks (zero length, non-zero length).
+    -s filename: Checks if the specified file is not empty (has a size greater than zero).
+    -v varname: Checks if the specified variable is set and not empty.
+    -t fd: Checks if the specified file descriptor is associated with a terminal.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+grep Command Options Reference:
+
+    -i, --ignore-case: Ignore case distinctions in both the pattern and input files.
+    -v, --invert-match: Invert the sense of matching, to select non-matching lines.
+    -c, --count: Suppress normal output; instead, print a count of matching lines for each input file.
+    -n, --line-number: Prefix each line of output with the 1-based line number within its input file.
+    -l, --files-with-matches: Suppress normal output; instead, print the name of each input file from which output would normally have been printed.
+    -r, --recursive: Read all files under each directory, recursively.
+    -E, --extended-regexp: Interpret pattern as an extended regular expression (ERE).
+    -w, --word-regexp: Select only those lines containing matches that form whole words.
+    -o, --only-matching: Print only the matched (non-empty) parts of matching lines, with each such part on a separate output line.
+    -A num, --after-context=num: Print num lines of trailing context after each matching line.
+    -B num, --before-context=num: Print num lines of leading context before each matching line.
+    -C[num], --context[=num]: Print num lines of output context.
+    -m num, --max-count=num: Stop reading a file after num matching lines.
+    -F, --fixed-strings: Interpret pattern as a list of fixed strings, separated by newlines, any of which is to be matched.
+    -e pattern, --regexp=pattern: Use pattern as the pattern.
+    -f file, --file=file: Obtain patterns from file, one per line.
+    --exclude=glob: Skip files whose base name matches glob (using wildcard matching).
+    --exclude-dir=dir: Exclude directories matching the pattern dir from recursive searches.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+ls:
+    -l: Long listing format, showing detailed information about files.
+    -a: Include hidden files and directories in the listing.
+    -h: Human-readable file sizes (e.g., 1K, 2M, 3G).
+    -t: Sort by modification time, newest first.
+    -r: Reverse the order of sorting.
+    -R: Recursively list subdirectories.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+cd:
+    -: Change to the previous working directory.
+    ~: Change to the home directory.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+pwd:
+    -P: Print the physical (real) path of the current directory.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+mkdir:
+    -p: Create parent directories as needed.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+rm:
+    -r: Recursively remove directories and their contents.
+    -f: Force removal without confirmation.
+    -i: Prompt before every removal.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+cp:
+    -r: Recursively copy directories and their contents.
+    -i: Prompt before overwriting existing files.
+    -u: Update only (copy files that are newer than the destination).
+
+---------------------------------------------------------------------------------------------------------------------------
+
+ mv:
+
+  -i, --interactive: Prompt before overwriting existing files.
+  -f, --force: Do not prompt before overwriting existing files.
+  -u, --update: Move only when the SOURCE file is newer than the destination file or when the destination file is missing.
+  -v, --verbose: Explain what is being done.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+touch:
+
+  -a: Change only the access time.
+  -m: Change only the modification time.
+  -d, --date=STRING: Use STRING as the timestamp.
+  -t STAMP: Use [[CC]YY]MMDDhhmm[.ss] instead of the current time.
+  -r FILE: Use the corresponding timestamp from FILE.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+cat:
+
+  -n, --number: Number all output lines.
+  -E, --show-ends: Display $ at end of each line.
+  -T, --show-tabs: Display TAB characters as ^I.
+  -v, --show-nonprinting: Use ^ and M- notation, except for LFD and TAB.
+    
+---------------------------------------------------------------------------------------------------------------------------
+
+more:
+
+  +<num>: Display <num> lines at a time.
+  -<num>: Display <num> lines less at a time.
+  /<pattern>: Search forward for <pattern>.
+  ?<pattern>: Search backward for <pattern>.
+  n: Go to the next occurrence of the search pattern.
+  q: Quit more.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+less:
+
+  -N, --LINE-NUMBERS: Display line numbers.
+  -S, --chop-long-lines: Fold long lines.
+  -i, --ignore-case: Ignore case in searches.
+  -j, --jump-target=STRING: Set the initial jump target to STRING.
+  -m, --long-prompt: Prompt more verbosely.
+  -x<num>: Set the tab stops every <num> columns.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+head:
+  -n N: Display the first N lines of each file.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+tail:
+  -n N: Display the last N lines of each file.
+  -f: Follow the growth of a file in real-time.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+chmod:
+  -R: Recursively change permissions of directories and their contents.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+chown:
+  -R: Recursively change ownership of directories and their contents.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+ps:
+  -e: Select all processes.
+  -f: Full-format listing.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+kill:
+  -9: Forcefully terminate the process.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+tar:
+  -c: Create a new archive.
+  -x: Extract files from an archive.
+  -v: Verbose mode, print filenames as they are archived/extracted.
+  -f file: Specify the filename of the archive.
+  -z: Compress the archive using gzip.
+  -j: Compress the archive using bzip2.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+wget:
+  -O file: Save downloaded content to a specified file.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+ssh:
+  -p port: Connect to a specific port.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+scp:
+  -r: Recursively copy directories and their contents.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+man:
+  -k keyword: Search for commands related to the specified keyword.
+  -f command: Display information about the specified command.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+history:
+  -c: Clear the history list by deleting all of the entries.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+echo:
+  -e: Enable interpretation of backslash escapes.
+  ^^: for convertion to uppercase
+  ^: for convertion first latter to uppercase (captilize)
+  ,,: for convertion to lowercase
+  echo -e "\e[31m$(echo "$path does not exists" | tr '[:lower:]' '[:upper:]')": example to convert lowercase to uppercase a string in echo using tr
+
+---------------------------------------------------------------------------------------------------------------------------
+
+curl Command Most Useful Options:
+
+  -o, --output <file>: Write output to <file> instead of stdout.
+  -O, --remote-name: Write output to a file named as the remote file.
+  -L, --location: Follow redirects.
+  -I, --head: Fetch headers only.
+  -s, --silent: Silent mode (suppress progress meter and error messages).
+  -u, --user <user:password>: Specify user and password for basic authentication.
+  -X, --request <method>: Specify request method (GET, POST, PUT, DELETE, etc.).
+  -H, --header <header>: Pass custom header(s) to server.
+  -d, --data <data>: Send data in request body (POST method).
+  -F, --form <name=content>: Specify multipart form data.
+  -G, --get: Convert POST request to a GET request.
+  -k, --insecure: Allow connections to SSL sites without certs.
+  -I, --include: Include protocol headers in the output.
+  -w, --write-out <format>: Customize the output format.
+  -c, --cookie <name=value>: Pass cookie(s) to server.
+  -b, --cookie-jar <file>: Save cookies to <file> after receiving.
+  -x, --proxy <[protocol://]host[:port]>: Use specified proxy.
+ 
+---------------------------------------------------------------------------------------------------------------------------
+  
+Bash Parameter Expansion: Prefix and Suffix Removal
+
+Prefix Removal (${parameter#word}):
+- Removes the shortest match of 'word' from the beginning of the value stored in 'parameter'.
+- If 'word' matches a portion of the value stored in 'parameter' at the beginning, that portion is removed.
+- If 'word' does not match, the value of 'parameter' remains unchanged.
+
+Suffix Removal (${parameter%word}):
+- Removes the shortest match of 'word' from the end of the value stored in 'parameter'.
+- If 'word' matches a portion of the value stored in 'parameter' at the end, that portion is removed.
+- If 'word' does not match, the value of 'parameter' remains unchanged.
+
+Additional Options:
+- If '##' is used instead of '#', it removes the longest match instead of the shortest match (e.g., ${parameter##word}).
+- If '%%' is used instead of '%', it removes the longest match instead of the shortest match (e.g., ${parameter%%word}).
+
+Examples:
+1. Prefix Removal:
+   - ${var#pattern}: Removes the shortest match of 'pattern' from the beginning of 'var'.
+   - ${var##pattern}: Removes the longest match of 'pattern' from the beginning of 'var'.
+
+2. Suffix Removal:
+   - ${var%pattern}: Removes the shortest match of 'pattern' from the end of 'var'.
+   - ${var%%pattern}: Removes the longest match of 'pattern' from the end of 'var'.
+
+Usage:
+- Prefix removal is useful for stripping prefixes or paths from filenames.
+- Suffix removal is useful for stripping file extensions or suffixes from filenames.
+- The pattern can include wildcards (*) for matching multiple characters.
+
+Note: If 'parameter' is not set or is null, the result is an empty string.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+tee:
+  SYNOPSIS
+        tee [OPTION]... [FILE]...
+
+  DESCRIPTION
+        -a, --append
+                append to the given FILEs, do not overwrite
+
+        -i, --ignore-interrupts
+                ignore interrupt signals
+
+        --help display this help and exit
+
+        --version
+                output version information and exit
+
+---------------------------------------------------------------------------------------------------------------------------
+
+xargs:
+  OPTIONS
+       -0, --null
+              Input items are terminated by a null character instead of by whitespace, and the quotes and backslash are not special (every character is taken literally). Disables the end-of-file string, which is treated like any other argument. Useful when input items might contain whitespace, quote marks, or backslashes.
+
+       -E eof-str, --eof[=eof-str]
+              Set the end-of-file string to eof-str. If the end-of-file string occurs as a line of input, the rest of the input is ignored. If eof-str is omitted, there is no end-of-file string.
+
+       -I replace-str, --replace[=replace-str]
+              Replace occurrences of replace-str in the initial-arguments with names read from standard input.
+
+       -L max-lines, --max-lines=max-lines
+              Use at most max-lines non-blank input lines per command line. Trailing blanks cause an input line to be logically continued on the next input line. Implies -x.
+
+       -l[max-lines], --max-args[=max-lines]
+              Use at most max-lines arguments per command line. Fewer than max-lines arguments will be used if the size (see the -s option) is exceeded, unless the -x option is given, in which case xargs will exit.
+  EXAMPLE
+        ls | xargs echo
