@@ -8,7 +8,7 @@ I'm a beginner in shell scripting, and I'm excited to dive into the world of aut
 
 ## Goals
 
-- [ ] Learn basic shell syntax and commands
+- [x] Learn basic shell syntax and commands
 - [ ] Understand shell scripting best practices
 - [ ] Explore shell scripting for automation tasks
 - [ ] Build practical projects using shell scripts
